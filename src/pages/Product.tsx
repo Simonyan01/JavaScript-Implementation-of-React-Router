@@ -47,7 +47,7 @@ export const Product = () => {
               </li>
             ))}
           </ul>
-          <button className="mt-6 w-full py-3 px-6 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600 transition">
+          <button type="button" className="mt-6 w-full py-3 px-6 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600 transition">
             Buy Now
           </button>
         </div>

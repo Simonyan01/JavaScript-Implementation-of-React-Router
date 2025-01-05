@@ -1,4 +1,5 @@
+import { IFormContext, InputUser, IRouterContext } from "./types"
 import { createContext } from "react"
-import { IContext } from "./types"
 
-export const RouterContext = createContext<IContext | null>(null)
+export const RouterContext = createContext<IRouterContext | null>(null)
+export const FormContext = createContext<IFormContext<InputUser> | null>(null)

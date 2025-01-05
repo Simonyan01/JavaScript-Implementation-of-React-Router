@@ -1,41 +1,41 @@
-import { useNavigate } from "@router/useNavigate"
+import { useNavigate } from "@hooks/useNavigate"
+
+const products = [
+    {
+        id: 1,
+        name: "Wireless Headphones",
+        price: "$199",
+        image: "https://via.placeholder.com/150",
+    },
+    {
+        id: 2,
+        name: "Smart Watch",
+        price: "$299",
+        image: "https://via.placeholder.com/150",
+    },
+    {
+        id: 3,
+        name: "Gaming Mouse",
+        price: "$79",
+        image: "https://via.placeholder.com/150",
+    },
+    {
+        id: 4,
+        name: "Mechanical Keyboard",
+        price: "$129",
+        image: "https://via.placeholder.com/150",
+    },
+]
 
 export const ProductList = () => {
     const navigate = useNavigate()
-
-    const products = [
-        {
-            id: 1,
-            name: "Wireless Headphones",
-            price: "$199",
-            image: "https://via.placeholder.com/150",
-        },
-        {
-            id: 2,
-            name: "Smart Watch",
-            price: "$299",
-            image: "https://via.placeholder.com/150",
-        },
-        {
-            id: 3,
-            name: "Gaming Mouse",
-            price: "$79",
-            image: "https://via.placeholder.com/150",
-        },
-        {
-            id: 4,
-            name: "Mechanical Keyboard",
-            price: "$129",
-            image: "https://via.placeholder.com/150",
-        },
-    ]
 
     return (
         <div className="min-h-screen bg-gray-100 p-8">
             <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
                 Product List
             </h1>
-            <button onClick={() => navigate("/add")} className="bg-red-400 tracking-wider text-white px-3 py-1 rounded-md mb-3">Add</button>
+            <button type="button" onClick={() => navigate("/add")} className="bg-red-400 tracking-wider text-white px-3 py-1 rounded-md mb-3">Add</button>
             <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {products.map((product) => (
                     <div
@@ -52,7 +52,7 @@ export const ProductList = () => {
                                 {product.name}
                             </h2>
                             <p className="text-gray-600 mt-2">{product.price}</p>
-                            <button className="mt-4 w-full py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
+                            <button type="button" className="mt-4 w-full py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
                                 Add to Cart
                             </button>
                         </div>

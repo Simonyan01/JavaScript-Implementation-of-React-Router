@@ -1,9 +1,10 @@
-import { createBrowserRouter } from './router/createBrowserRouter.ts'
-import { RouterProvider } from './router/routerProvider.tsx'
-import { ProductList } from './pages/ProductList.tsx'
-import { AddProduct } from './pages/AddProduct.tsx'
+import { createBrowserRouter } from '@router/createBrowserRouter.ts'
+import { RouterProvider } from '@router/router-provider.tsx'
+import { ProductList } from '@pages/product-list.tsx'
+import { AddProduct } from '@pages/add-product.tsx'
 import { createRoot } from 'react-dom/client'
-import { Product } from './pages/Product.tsx'
+import { Product } from '@pages/product.tsx'
+import { Provider } from './provider.tsx'
 import './index.css'
 
 const routes = createBrowserRouter([
@@ -13,5 +14,7 @@ const routes = createBrowserRouter([
 ])
 
 createRoot(document.getElementById('root')!).render(
-  <RouterProvider router={routes} />
+  <Provider>
+    <RouterProvider router={routes} />
+  </Provider>
 ) 

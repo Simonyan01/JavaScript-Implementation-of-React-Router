@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { RouterContext } from "@helpers/context"
 import { IProviderProps } from "@helpers/types"
+import { NotFound } from "@pages/not-found"
 import { useEffect, useState } from "react"
-import { NotFound } from "@pages/NotFound"
 
 export const RouterProvider: React.FC<IProviderProps> = ({ router }) => {
     const [currentView, setCurrentView] = useState<React.ReactNode | null>(null)
