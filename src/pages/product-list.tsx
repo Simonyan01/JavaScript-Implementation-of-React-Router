@@ -1,4 +1,6 @@
 import { useNavigate } from "@hooks/useNavigate"
+import { useParams } from "@hooks/useParams"
+import { Link } from "@router/Link"
 
 const products = [
     {
@@ -29,6 +31,9 @@ const products = [
 
 export const ProductList = () => {
     const navigate = useNavigate()
+    const { name } = useParams()
+
+    console.log(name)
 
     return (
         <div className="min-h-screen bg-gray-100 p-8">
@@ -52,9 +57,9 @@ export const ProductList = () => {
                                 {product.name}
                             </h2>
                             <p className="text-gray-600 mt-2">{product.price}</p>
-                            <button type="button" className="mt-4 w-full py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
-                                Add to Cart
-                            </button>
+                            <Link to={`/product/:${name}`} className="mt-4 w-full inline-block text-center tracking-wider py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
+                                View Details
+                            </Link>
                         </div>
                     </div>
                 ))}

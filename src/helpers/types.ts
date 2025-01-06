@@ -18,6 +18,7 @@ export interface ILink {
 
 export interface IRouterContext {
   navigate: (path: string) => void
+  params: (path: string) => void
 }
 
 export interface IFormContext<T> {
@@ -40,7 +41,7 @@ export type FormState<T> = {
 
 export type ErrorState<T> = Partial<Record<keyof T, string>>
 
-export type InputUser = { 
+export type InputUser = {
   username: string
   price: number
   imageURL: string
